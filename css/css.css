@@ -1,0 +1,14 @@
+html, body {
+  overflow-x: hidden
+}
+
+body {
+  background-color: lightgrey;
+  font-family: "Arial Black", Helvetica, sans-serif;
+  font-size: 16em;
+  color: black;
+
+  overflow: hidden !important;
+  width: 100%;
+  height: 100%;
+}
