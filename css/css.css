@@ -97,10 +97,10 @@ p {
 
 /* line 1, ../../../components/sass/_layout.scss */
 body {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  color:white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color:white;
 }
 
 #clock {
@@ -138,27 +138,51 @@ body {
 }
 
 #current-date + #current-time {
-	padding-top: 0;
+    padding-top: 0;
+}
+
+.sun, .moon{
+    width: 75px;
+    height: 75px;
+    position:relative;
+    margin-top: 25px;
+    background-size: 75%;
+    background-repeat: no-repeat;
+    display: none;
+}
+
+.sun{
+  background-image: url('../images/sun.png');
+}
+
+.moon{
+  background-image: url('../images/moon.jpg');
+}
+
+.label, .title, #current-date, #current-time{
+  position: relative;
 }
 
 @media (min-width: 700px) {
-    #event-list,
+  #event-list,
+  #clock {
+      display: inline-block;
+      vertical-align: top;
+      -moz-box-sizing: border-box;
+      -webkit-box-shadow: border-box;
+      box-sizing: border-box;
+      padding: 1rem;
+  }
+  
+  #event-list {
+     margin: 1rem;
+  }
+  
     #clock {
-        display: inline-block;
-        vertical-align: top;
-        -moz-box-sizing: border-box;
-        -webkit-box-shadow: border-box;
-        box-sizing: border-box;
-        padding: 1rem;
-    }
-    
-    #event-list {
-       margin: 1rem;
-    }
-    
-    #clock {
-       margin: 0 0 1rem;
-       min-width: 12em;
+  		margin: 0 0 1rem;
+  		min-width: 12em;
+  		display: flex;
+  		justify-content: center;
     }
     
     #clock .label {
@@ -167,6 +191,5 @@ body {
     
     #current-time,
     #current-date {
-        text-align: center;
-    }
+        padding-top: 20px !important;    }
 }
