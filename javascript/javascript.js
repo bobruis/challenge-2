@@ -3,8 +3,9 @@
 
 	document.addEventListener('DOMContentLoaded', function(){
 		var currentTime = document.getElementById('current-time'),
-			currentDate = document.getElementById('current-date'),
-			currentWeather = document.getElementById('current-weather');
+			currentDate = document.getElementById('current-date');
+	
+			
 
 		setInterval(function() {
 			var d = new Date();
@@ -20,22 +21,28 @@
 
 			var message = '';
 
-				if(hours > 6 && hours < 12){
-					message = 'Goedenmorgen citizen';
+				if(hours >= 6 && hours <= 12){
+					message = 'Goedenmorgen Bob';
+					TweenMax.to('.sun', 8, {left: '50%', rotation: 360, display:'block', ease:'Elastic.easeOut'});
 				}
-				else if(hours >= 18 && hours < 23){
-					message = 'Goedeavond citizen';
+				else if(hours >= 18 && hours <= 19){
+					message = 'Goedeavond Bob';
 					TweenMax.to('.moon', 8, {left: '50%', rotation: 360, display:'block', ease:'Elastic.easeOut'});
 				}
-				else if(hours >= 0 && hours < 5){
-					message = 'Goedenacht citizen';
+				else if(hours >= 0 && hours <= 5){
+					message = 'Goedenacht Bob';
+					
+					TweenMax.to('.moon', 8, {left: '50%', rotation: 360, display:'block', delay: 1, ease:'Elastic.easeOut'});
 				}
 				else{
-					message = 'Goedemiddag citizen';
+					message = 'Goedemiddag Bob';
 					TweenMax.to(".sun", 8, {left: '50%', rotation: 360, display:'block', ease:"Elastic.easeOut"});
 				}
 
 			document.getElementById('welcome-message').innerHTML = message;
+
+		
+
 
 			var sepClass = '';
 				
@@ -47,28 +54,29 @@
 			currentDate.textContent = month + ' ' + date;
 		}, 1000);
 		
-		function formatMonth(m) {
-			m = parseInt(m, 10);
-		
-			if (m < 0) {
-				m = 0;
-			} else if (m > 11) {
-				m = 11;
-			}	
-		
-			var monthNames = [
-				'januari', 'februari', 'maart',
-				'april', 'mei', 'juni', 
-				'juli', 'augustus', 'september',
-				'oktober', 'november', 'december'
-			];
+			function formatMonth(m) {
+				m = parseInt(m, 10);
 			
-			return monthNames[m];
+				if (m < 0) {
+					m = 0;
+				} else if (m > 11) {
+					m = 11;
+				}	
+			
+				var monthNames = [
+					'januari', 'februari', 'maart',
+					'april', 'mei', 'juni', 
+					'juli', 'augustus', 'september',
+					'oktober', 'november', 'december'
+				];
+				
+				return monthNames[m];
 
-		// functie om de juiste maand te pakken
-		// controleert of er niet iets onder de 0 of boven de 11 aanwezig is
-		// var montNames is een array die start bij 0 daardoor heeft [m] bij 0 - january etc. 
-		}
+			// functie om de juiste maand te pakken
+			// controleert of er niet iets onder de 0 of boven de 11 aanwezig is
+			// var montNames is een array die start bij 0 daardoor heeft [m] bij 0 - january etc. 
+			}
+		
+	});
 
-		});
 })();
