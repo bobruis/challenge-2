@@ -5,7 +5,7 @@
 		var currentTime = document.getElementById('current-time'),
 			currentDate = document.getElementById('current-date');
 	
-			
+
 
 		setInterval(function() {
 			var d = new Date();
@@ -21,28 +21,28 @@
 
 			var message = '';
 
-				if(hours >= 6 && hours <= 12){
+				if(hours >= 6 && hours <= 11){
+					document.body.style.backgroundColor = "#CDE8FF";
 					message = 'Goedenmorgen Bob';
 					TweenMax.to('.sun', 8, {left: '50%', rotation: 360, display:'block', ease:'Elastic.easeOut'});
-				}
+									}
 				else if(hours >= 18 && hours <= 19){
+					document.body.style.backgroundImage = "url('images/night.jpg')";
 					message = 'Goedeavond Bob';
 					TweenMax.to('.moon', 8, {left: '50%', rotation: 360, display:'block', ease:'Elastic.easeOut'});
 				}
 				else if(hours >= 0 && hours <= 5){
+					document.body.style.backgroundImage = "url('images/night.jpg')";
 					message = 'Goedenacht Bob';
-					
 					TweenMax.to('.moon', 8, {left: '50%', rotation: 360, display:'block', delay: 1, ease:'Elastic.easeOut'});
 				}
 				else{
+					document.body.style.backgroundColor = "#FDFF7C";
 					message = 'Goedemiddag Bob';
-					TweenMax.to(".sun", 8, {left: '50%', rotation: 360, display:'block', ease:"Elastic.easeOut"});
+					TweenMax.to(".sun", 8, {left: '75%', marginTop: '-70px', rotation: 360, display:'block', ease:"Elastic.easeOut"});
 				}
 
 			document.getElementById('welcome-message').innerHTML = message;
-
-		
-
 
 			var sepClass = '';
 				

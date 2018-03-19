@@ -64,8 +64,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 body {
   font: 200 1em/1.5em "Exo 2", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color:white;
+  background-position: center;
+    
+    background-size: cover;
   color: white;
+  height: 100%;
 }
 
 
@@ -78,7 +81,6 @@ h1, h2, h3, h4, h5, h6 {
 strong {
   font-weight: 600;
 }
-
 
 p {
   font-weight: 200;
@@ -127,19 +129,18 @@ p {
     width: 75px;
     height: 75px;
     position:relative;
-    margin-top: 25px;
     background-size: 75%;
     background-repeat: no-repeat;
     display: none;
 }
 
+.moon{
+  background-image: url('../images/moon.png');
+}
 .sun{
-  background-image: url('../images/sun.png'); display: none;
+  background-image: url('../images/sun.png');
 }
 
-.moon{
-  background-image: url('../images/moon.png'); display:none;
-}
 
 .label, .title, #current-date, #current-time{
   position: relative;
