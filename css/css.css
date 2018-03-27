@@ -136,9 +136,12 @@ p {
 
 .moon{
   background-image: url('../images/moon.png');
+  float:right;
 }
+
 .sun{
   background-image: url('../images/sun.png');
+  float:right;
 }
 
 
