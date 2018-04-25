@@ -4,8 +4,6 @@
 	document.addEventListener('DOMContentLoaded', function(){
 		var currentTime = document.getElementById('current-time'),
 			currentDate = document.getElementById('current-date');
-	
-
 
 		setInterval(function() {
 			var d = new Date();
@@ -26,7 +24,7 @@
 					message = 'Goedenmorgen Bob';
 					TweenMax.to('.sun', 8, {left: '75%', marginTop: '-70px', rotation: 360, display:'block', ease:'Elastic.easeOut'});
 									}
-				else if(hours >= 18 && hours <= 19){
+				else if(hours >= 18 && hours <= 23){
 					document.body.style.backgroundImage = "url('images/night.jpg')";
 					message = 'Goedeavond Bob';
 					TweenMax.to('.moon', 8, {left: '0%', marginTop: '-70px', rotation: 360, display:'block', delay: 1,ease:'Elastic.easeOut'});
