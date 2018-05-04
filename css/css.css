@@ -157,19 +157,24 @@ p {
       -moz-box-sizing: border-box;
       -webkit-box-shadow: border-box;
       box-sizing: border-box;
-      padding: 1rem;
+      padding: 0rem;
   }
+
+
   
+  .label{
+    width: 68%;
+  }
   #event-list {
      margin: 1rem;
   }
   
-    #clock {
-  		margin: 0 0 1rem;
-  		min-width: 12em;
-  		display: flex;
-  		justify-content: center;
-    }
+  #clock {
+		margin: 0 0 2rem;
+		min-width: 12em;
+		display: flex;
+		justify-content: center;
+  }
     
     #clock .label {
         padding: 0.25em 0.5em;

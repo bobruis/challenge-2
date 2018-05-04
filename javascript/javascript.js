@@ -19,6 +19,8 @@
 
 			var message = '';
 
+			var mq = window.matchMedia( "(min-width: 700px)" );
+
 				if(hours >= 6 && hours <= 11){
 					document.body.style.backgroundColor = "#CDE8FF";
 					message = 'Goedenmorgen Bob';
@@ -39,6 +41,16 @@
 					message = 'Goedemiddag Bob';
 					TweenMax.to(".sun", 8, {left: '0%', marginTop: '-70px', rotation: 360, display:'block', ease:"Elastic.easeOut"});
 				}
+
+
+			if(mq.matches && hours >= 0 && hours <= 5){
+				document.body.style.backgroundImage = "url('images/night.jpg')";
+					TweenMax.to('.moon', 8, {left: '0%', marginTop: '5px', rotation: 360, display:'block', delay: 1, ease:'Elastic.easeOut'});
+				}
+			else{
+				document.body.style.backgroundColor = "#FDFF7C";
+			}
+
 
 			document.getElementById('welcome-message').innerHTML = message;
 
